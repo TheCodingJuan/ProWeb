@@ -1,0 +1,16 @@
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\Repositorio.dll
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\Repositorio.pdb
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\Modelos.dll
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\Modelos.pdb
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\obj\Debug\Repositorio.csprojAssemblyReference.cache
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\obj\Debug\Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\obj\Debug\Repositorio.csproj.CopyComplete
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\obj\Debug\Repositorio.dll
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\obj\Debug\Repositorio.pdb
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\Repositorio.dll.config
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\EntityFramework.dll
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\EntityFramework.xml
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Repositorio\bin\Debug\es\EntityFramework.SqlServer.resources.dll
