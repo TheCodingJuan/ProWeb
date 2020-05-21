@@ -1,0 +1,172 @@
+.titulo
+{
+  color: #000000;
+  font-size: 1.7em;
+  font-family: 'Poppins', sans-serif;
+}
+
+main
+{
+  padding-top: 60px;
+}
+nav {
+    margin: auto;
+    height: 60px;
+}
+
+.barraMenu
+{
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding: 10px;
+  background-color: #CEECF5;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.barraMenu li
+{
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul.barraMenu
+{
+  margin: 0;
+}
+
+.barraMenu li a
+{
+  display: block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.barraMenu li a:hover {
+  background-color: FFBB33;
+  color: white;
+}
+
+body
+{
+    margin: 5px;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-padding-top: 155px;
+    font-size: 20px;
+}
+
+thead{
+    background-color: rgb(0, 0, 150);
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even)
+{
+    background-color: white;
+    color: black;
+}
+
+tbody tr:nth-child(odd)
+{
+    background-color: #a2ff5c;
+    color: black;
+}
+
+.foto
+{
+  width: 300px;
+}
+
+.fotoContainer
+{
+  float: left;
+}
+
+.thumbnail{
+    border: solid black 3px;
+}
+.container{
+    text-align: justify;
+}
+h1, h2, h3{
+    text-decoration: underline;
+    text-decoration-color: #00a7ff;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    color: black;
+}
+
+#laboral
+{
+    background: linear-gradient(#e66465, #9198e5);
+}
+
+#estudios
+{
+    background: linear-gradient(#9198e5, #95ffdf);
+}
+
+#premios
+{
+    background: linear-gradient(#95ffdf, #ffe657);
+}
+
+#prod
+{
+    background: linear-gradient(#ffe657, #008c35);
+}
+
+.principal:hover{
+  background: #A8F29A;
+  border: 2px black solid;
+}
+
+.sub{
+    padding: 10px;
+    border: solid black 5px;
+}
+.sub ul{
+    list-style-type: none;
+}
+.sub ul li{
+    padding-left: .7em;
+    text-indent: -.7em;
+}
+.sub ul li::before {
+    content: "*";
+    color: white;
+    font-weight: bolder;
+    display: inline-block;
+    width: 1em;
+    margin-left: -.7em;
+}
+.sub ol {
+    list-style: none;
+    counter-reset: li;
+}
+.sub li::before {
+    content: counter(li); color: red;
+    display: inline-block; width: 1em;
+    margin-left: -1em;
+}
+.sub li {
+    counter-increment: li;
+}
+
+.error{
+    color: red;
+}
+#chatbox{
+    border: 2px gray solid;
+    width: 100%;
+    height: 100px;
+    overflow:scroll;
+}

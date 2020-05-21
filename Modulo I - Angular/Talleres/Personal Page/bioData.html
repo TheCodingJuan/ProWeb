@@ -1,0 +1,97 @@
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="project" content="app">
+    <meta name="author" content="Johan">
+    <meta name="keywords" content="biografia">
+    <meta name="robots" content="INDEX, NOARCHIVE, FOLLOW">
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <script type="text/javascript" src="script.js"> </script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title> Info.Biografica </title>
+  </head>
+
+  <body>
+    <header>
+      <nav class ="barraMenu">
+        <ul>
+          <li> <a href="welcome.html"> Home </a> </li>
+          <li> <a href="bioData.html"> Biografia </a> </li>
+          <li> <a href="studiesData.html"> Perfil Profesional </a> </li>
+          <li> <a href="interestMaterial.html"> Intereses </a> </li>
+        </ul>
+      </nav>
+    </header>
+  <main>
+    <h1 id = "titulo"> Informacion Biografica </h1>
+    <article class="principal">
+      <h2>Pagina de datos biograficos</h2>
+      <p> Esta pagina contiene una tabla la cual especifica ambitos biograficos de el creador de la pagina.</p>
+    </article>
+
+    <table class="principal">
+      <thead>
+        <tr>
+          <th> Topico </th>
+          <th> Especificacion </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> Nombre Completo </td>
+          <td> Juan Jose Camacho Cala </td>
+        </tr>
+        <tr>
+          <td> Lugar de Nacimiento </td>
+          <td> Bogota D.C </td>
+        </tr>
+        <tr>
+          <td> Fecha de Nacimiento </td>
+          <td> 6 de Agosto de 1997 </td>
+        </tr>
+        <tr>
+          <td> Estatura </td>
+          <td> 1.85 </td>
+        </tr>
+        <tr>
+          <td> Raza </td>
+          <td> Criollito </td>
+        </tr>
+      </tbody>
+    </table>
+
+      <div class="principal">
+        <div class="timeline">
+          <form name="timeline" id="form">
+            <fieldset>
+              <legend><h2>Linea de tiempo</h2></legend>
+              <p>En esta sección se tiene una línea de tiempo, donde puedes publicar mensajes.
+                 Es obligatorio escribir tu nombre y un mensaje, el cual no puede superar 300 caracteres
+              </p>
+              <div>
+              <div id="chatbox">
+              </div>
+              <label for="txtNombre">Nombre:</label>
+              <input type="text" name="nombre" id="txtNombre" size="31">
+              <span id="name" class="error"></span>
+              </div>
+              <div>
+              <label for="txt">Mensaje: </label><br>
+              <textarea name="message" rows="10" cols="40%" id="txt"></textarea>
+              <span id="message" class="error"></span>
+              </div>
+              <input type="button" name="enviar" value="Enviar" onclick="validateForm()">
+              </fieldset>
+            </form>
+        </div>
+      </div>
+  </main>
+  <footer>
+    <p>©Copyright 2019 by TheCodingJuan. All rights reserved.</p>
+  </footer>
+  </body>
+  </html>
