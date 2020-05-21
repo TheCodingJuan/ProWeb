@@ -1,0 +1,6 @@
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Modelos\bin\Debug\Modelos.dll
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Modelos\bin\Debug\Modelos.pdb
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Modelos\obj\Debug\Modelos.dll
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Modelos\obj\Debug\Modelos.pdb
+C:\Users\aulasmoviles\source\repos\ProyectoNET_20274814\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
