@@ -1,0 +1,125 @@
+<h1>Crear Bus</h1>
+<div class="container">
+    <form (ngSubmit)="editarBus()" #createForm="ngForm" #updateForm="ngForm">
+
+        <div>
+            <label for="placa">Placa</label>
+            <input class="form-control" type="text" id="placa" name="placa"
+            required [(ngModel)]="bus.placa"
+            #txtplaca="ngModel"/>
+            <div [hidden]="txtplaca.valid || !txtplaca.touched" class="alert alert-danger">
+                La placa es obligatoria
+            </div>
+        </div>
+        <div>
+            <label for="modelo">Modelo</label>
+            <input class="form-control" type="text" name="modelo" id="modelo"
+            required [(ngModel)]="bus.modelo"
+            #txtmodelo="ngModel"/>
+            <div [hidden]="txtmodelo.valid || !txtmodelo.touched" class="alert alert-danger">
+                El modelo es obligatoria
+            </div>
+        </div>
+
+        <div>
+          <h2>Agregue las Rutas del bus </h2>
+          <div class="alert alert-info">
+            {{message}}
+          </div>
+          <table class="table table-light table-bordered table-hover">
+              <thead>
+                  <tr class="thead-dark">
+                      <th>Id</th>
+                      <th>Codigo</th>
+                      <th>Hora de Inicio (24 hrs)</th>
+                      <th>Hora de Fin (24 hrs)</th>
+                      <th>Dias de funcionamiento</th>
+                      <th>Estaciones del Recorrido</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let ruta of rutas; let i=index">
+                      <td>{{ ruta.id }}</td>
+                      <td>{{ ruta.codigo }}</td>
+                      <td>{{ ruta.horaInicio }}</td>
+                      <td>{{ ruta.horaFin }}</td>
+                      <td>
+                        <table>
+                          <tbody>
+                            <tr *ngFor="let dia of ruta.dias">
+                              <td>{{dia.dia}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td>
+                        <table>
+                          <tbody>
+                            <tr *ngFor="let est of ruta.estaciones">
+                              <td>{{est.nombre}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td><button type="button" class="btn btn-success" (click)="agregarRuta(ruta,i)">Agregar ruta</button> </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+
+      <div>
+        <h2>Rutas del bus </h2>
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr class="thead-dark">
+                    <th>Id</th>
+                    <th>Codigo</th>
+                    <th>Hora de Inicio (24 hrs)</th>
+                    <th>Hora de Fin (24 hrs)</th>
+                    <th>Dias asignados</th>
+                    <th>Estaciones del Recorrido</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ruta of bus.rutas; let i=index">
+                    <td>{{ ruta.id }}</td>
+                    <td>{{ ruta.codigo }}</td>
+                    <td>{{ ruta.horaInicio }}</td>
+                    <td>{{ ruta.horaFin }}</td>
+                    <td>
+                      <table>
+                        <tbody>
+                          <tr *ngFor="let dia of ruta.dias">
+                            <td>{{dia.dia}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td>
+                      <table>
+                        <tbody>
+                          <tr *ngFor="let est of ruta.estaciones">
+                            <td>{{est.nombre}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td><button type="button" class="btn btn-danger" (click)="quitarRuta(ruta, i)">Quitar ruta</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div [hidden]="bus.rutas.length>0"class="alert alert-danger">
+      No hay rutas agregadas al bus
+    </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!updateForm.form.valid || updateForm.submitted">
+            Guardar
+        </button>
+        <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+    </form>
+</div>
+

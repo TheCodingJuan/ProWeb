@@ -1,0 +1,25 @@
+<h1>Lista de rutas</h1>
+<td><button type="button" class="btn btn-success" [routerLink]="['/administrador/route/create']">Crear ruta</button></td>
+    <table class="table table-light table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Codigo</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let route of routes">
+          <td>{{route.id}}</td>
+          <td>{{route.codigo}}</td>
+          <td><button type="button" class="btn btn-info" (click)="verRuta(route.id)">Ver ruta</button></td>
+          <td><button type="button" class="btn btn-warning" (click)="editarRuta(route.id)">Editar ruta</button></td>
+          <td><button type="button" class="btn btn-danger" (click)="validarEliminacion(route.id)">Eliminar ruta </button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div [hidden]="!errorBus" class="alert alert-danger">
+      Esta ruta tiene buses asignados
+    </div>

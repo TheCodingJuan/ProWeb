@@ -1,0 +1,38 @@
+<h1>Ruta: {{ruta.codigo}}</h1>
+<h1>Id: {{ruta.id}}</h1>
+<br>
+<div class=" container row">
+    <td><button type="button" class="btn btn-warning" (click)="editarRuta(ruta.id)">Editar</button></td>
+    <td><button type="button" class="btn btn-danger" (click)="validarEliminacion(ruta.id)">Eliminar</button></td>
+</div>
+
+<h2>Estaciones en la ruta</h2>
+<table class="table table-light table-bordered table-hover">
+    <thead>
+        <tr class="thead-dark">
+            <th>Id</th>
+            <th>Nombre de la estacion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let estacion of ruta.estaciones">
+            <td>{{ estacion.id }}</td>
+            <td>{{ estacion.nombre }}</td>
+        </tr>
+    </tbody>
+</table>
+<h2>Dias de funcionamiento</h2>
+<table class="table table-light table-bordered table-hover">
+    <tbody>
+      <tr class="table-info" >
+        <td *ngFor="let dia of ruta.dias">{{dia.dia}} </td>
+      </tr>
+    </tbody>
+  </table>
+<div [hidden]="!errorBus" class="alert alert-danger">
+    Esta ruta tiene buses asignados
+</div>
+
+<div class=" container row">
+    <td><button type="button" class="btn btn-info " (click)="volverALaLista()">Volver a la lista</button></td>
+</div>

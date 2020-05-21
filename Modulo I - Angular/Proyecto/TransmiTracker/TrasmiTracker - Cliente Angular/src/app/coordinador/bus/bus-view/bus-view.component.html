@@ -1,0 +1,56 @@
+<h1>Placa: {{bus.placa}}</h1>
+<h1>Id: {{bus.id}}</h1>
+<h1>Modelo: {{bus.modelo}}</h1>
+<br>
+<div class=" container row">
+    <td><button type="button" class="btn btn-warning" (click)="editarbus(bus.id)">Editar</button></td>
+    <td><button type="button" class="btn btn-danger" (click)="eliminarBus(bus.id)">Eliminar</button></td>
+</div>
+
+<div>
+  <h2>Rutas del bus </h2>
+  <table class="table table-light table-bordered table-hover">
+      <thead>
+          <tr class="thead-dark">
+              <th>Id</th>
+              <th>Codigo</th>
+              <th>Hora de Inicio (24 hrs)</th>
+              <th>Hora de Fin (24 hrs)</th>
+              <th>Dias asignados</th>
+              <th>Estaciones del Recorrido</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let ruta of bus.rutas; let i=index">
+              <td>{{ ruta.id }}</td>
+              <td>{{ ruta.codigo }}</td>
+              <td>{{ ruta.horaInicio }}</td>
+              <td>{{ ruta.horaFin }}</td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr *ngFor="let dia of ruta.dias">
+                      <td>{{dia.dia}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr *ngFor="let est of ruta.estaciones">
+                      <td>{{est.nombre}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<div class="alert alert-danger">
+  {{message}}
+</div>
+<div class=" container row">
+    <td><button type="button" class="btn btn-info " (click)="volverALaLista()">Volver a la lista</button></td>
+</div>

@@ -1,0 +1,113 @@
+<h1>Crear ruta</h1>
+<div class="container">
+    <form #createForm="ngForm" #updateForm="ngForm">
+        <div>
+            <label for="codigo">Codigo</label>
+            <input class="form-control" type="text" id="rCodigo" name="rCodigo"
+            required [(ngModel)]="ruta.codigo"
+            #txtCodigo="ngModel"/>
+            <div [hidden]="txtCodigo.valid || !txtCodigo.touched" class="alert alert-danger">
+                El código es obligatorio
+            </div>
+        </div>
+        <div>
+            <label for="horaInicio">Hora inicio</label>
+            <input class="form-control" type="number" name="horaInicio" id="horaInicio" min="0" max="23"
+            required [(ngModel)]="horaInicio"
+            #numberInicio="ngModel"/>
+            <div [hidden]="numberInicio.valid || !numberInicio.touched" class="alert alert-danger">
+                La hora de inicio es obligatoria
+            </div>
+        </div>
+        <div>
+            <label for="horaFinal">Hora final</label>
+            <input class="form-control" type="number" name="horaFinal" id="horaFinal" min="0" max="23"
+            required [(ngModel)]="horaFinal"
+            #numberFinal="ngModel"/>
+            <div [hidden]="numberFinal.valid || !numberFinal.touched" class="alert alert-danger">
+                La hora de final es obligatoria
+            </div>
+        </div>
+        <h2>Escoja los dias </h2>
+        <div class="form-check">
+            <div class="form-check">
+                <input type="checkbox" id="weekday-mon" class="form-check-input" [(ngModel)]="lunes" [ngModelOptions]="{standalone:true}" />
+                <label for="weekday-mon" class="form-check-label">Lunes</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="weekday-tue" class="form-check-input" [(ngModel)]="martes" [ngModelOptions]="{standalone:true}" />
+                <label for="weekday-tue" class="form-check-label">Martes</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="weekday-wed" class="form-check-input" [(ngModel)]="miercoles" [ngModelOptions]="{standalone:true}" />
+                <label for="weekday-wed" class="form-check-label ">Miercoles</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="weekday-thu" class="form-check-input " [(ngModel)]="jueves" [ngModelOptions]="{standalone:true}"/>
+                <label for="weekday-thu" class="form-check-label">Jueves</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="weekday-fri" class="form-check-input" [(ngModel)]="viernes" [ngModelOptions]="{standalone:true}" />
+                <label for="weekday-fri" class="form-check-label">Viernes</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="weekday-sat" class="form-check-input" [(ngModel)]="sabado" [ngModelOptions]="{standalone:true}" />
+                <label for="weekday-sat" class="form-check-label">Sabado</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="weekday-sun" class="form-check-input" [(ngModel)]="domingo" [ngModelOptions]="{standalone:true}"/>
+                <label for="weekday-sun" class="form-check-label">Domingo</label>
+            </div>
+        </div>
+
+        <div>
+            <h2>Agregue las estaciones a la ruta</h2>
+            <table class="table table-light table-bordered table-hover">
+                <thead>
+                    <tr class="thead-dark">
+                        <th>Id</th>
+                        <th>Nombre de la estacion</th> 
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let estacion of estaciones; let i=index">
+                        <td>{{ estacion.id }}</td>
+                        <td>{{ estacion.nombre }}</td>
+                        <td><button type="button" class="btn btn-success" (click)="agregarEstacion(i)">Agregar estacion</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h2>Estaciones agregadas en la ruta</h2>
+            <table class="table table-light table-bordered table-hover">
+                <thead>
+                    <tr class="thead-dark">
+                        <th>Id</th>
+                        <th>Nombre de la estacion</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let estacion of ruta.estaciones; let i=index" >
+                        <td>{{ estacion.id }}</td>
+                        <td>{{ estacion.nombre }}</td>
+                        <td><button type="button" class="btn btn-danger" (click)="quitarEstacion(i)">Quitar estacion</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div [hidden]="ruta.estaciones.length>0"class="alert alert-danger">
+            No hay estaciones agregadas a la ruta
+        </div>
+
+        <button type="submit" (click)="guardarRuta()"  class="btn btn-success" [disabled]="!updateForm.form.valid || updateForm.submitted || 0 == ruta.estaciones.length 
+        || (!lunes && !martes && !miercoles && !jueves && !viernes && !sabado && !domingo) ">
+            Guardar
+        </button>
+        <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+    </form>
+</div>

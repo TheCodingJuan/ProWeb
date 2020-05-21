@@ -1,0 +1,29 @@
+<h1>Lista de conductores</h1>
+<td><button type="button" class="btn btn-success" [routerLink]="['/coordinador/driver/create']">Crear conductor</button></td>
+    <table class="table table-light table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Cedula</th>
+          <th>Telefono</th>
+          <th>Direccion</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let driver of drivers">
+          <td>{{driver.id}}</td>
+          <td>{{driver.nombre}}</td>
+          <td>{{driver.cedula}}</td>
+          <td>{{driver.telefono}}</td>
+          <td>{{driver.direccion}}</td>
+          <td><button type="button" class="btn btn-info" (click)="verConductor(driver.id)">Ver conductor</button></td>
+          <td><button type="button" class="btn btn-warning" (click)="editarConductor(driver.id)">Editar conductor</button></td>
+          <td><button type="button" class="btn btn-danger" (click)="eliminarConductor(driver.id)">Eliminar conductor </button></td>
+        </tr>
+      </tbody>
+    </table>
+<td><button type="button" class="btn btn-primary" [routerLink]="['/coordinador/inicio']">Reegresar al Inicio</button></td>

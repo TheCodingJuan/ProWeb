@@ -1,0 +1,48 @@
+<h1>Nombre: {{driver.nombre}}</h1>
+<h1>Id: {{driver.id}}</h1>
+<h1>Cedula: {{driver.cedula}}</h1>
+<h1>Telefono: {{driver.telefono}}</h1>
+<h1>Direccion: {{driver.direccion}}</h1>
+<br>
+<div class=" container row">
+    <td><button type="button" class="btn btn-warning" (click)="editardriver(driver.id)">Editar</button></td>
+    <td><button type="button" class="btn btn-danger" (click)="eliminarConductor(driver.id)">Eliminar</button></td>
+</div>
+
+<div>
+  <h2>Buses del conductor </h2>
+  <table class="table table-light table-bordered table-hover">
+      <thead>
+        <tr class="thead-dark">
+          <th>Id</th>
+          <th>Placa</th>
+          <th>Modelo</th>
+          <th>Dias Asignados</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let bus of driver.buses; let i=index">
+          <td>{{ bus.id }}</td>
+          <td>{{ bus.placa }}</td>
+          <td>{{ bus.modelo }}</td>
+          <td>
+              <tr *ngFor="let ruta of bus.rutas">
+                <td>
+                  <table>
+                    <tbody>
+                      <tr *ngFor="let dia of ruta.dias">
+                        <td>{{dia.dia}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+          </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+<div class=" container row">
+    <td><button type="button" class="btn btn-info " (click)="volverALaLista()">Volver a la lista</button></td>
+</div>

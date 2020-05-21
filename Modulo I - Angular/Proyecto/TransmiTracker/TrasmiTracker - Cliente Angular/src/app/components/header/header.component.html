@@ -1,0 +1,7 @@
+<header>
+    <div class="container">
+      <h1 id="titulo">TrasmiTracker!</h1>
+    </div>
+    <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="route.url == '/public/routeList'">Iniciar Sesión</button>
+      <button type="button" class="btn btn-outline-light" (click)="logout()" *ngIf="route.url != '/public/routeList'">Cerrar Sesión</button>
+  </header>

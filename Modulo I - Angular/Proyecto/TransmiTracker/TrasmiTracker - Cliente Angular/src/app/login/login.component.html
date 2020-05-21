@@ -1,0 +1,35 @@
+<div id="loginbox" class="center">
+  <h2>Iniciar Sesion</h2>
+  <div id="formbox" class="center">
+    <form (ngSubmit)="doLogin()" #loginForm="ngForm">
+      <div class="box">
+        <div>
+          <label for="txtUser">Usuario: </label><br>
+          <input type="text" id="txtUser" required #txtUser="ngModel" name="usuario"
+            [(ngModel)]="usuario" placeholder="Ingrese su usuario">
+        </div>
+        <div [hidden]="txtUser.valid || !txtUser.touched" class="errorCampo">
+          Usuario invalido
+        </div>
+      </div>
+      <div class="box">
+        <div>
+          <label for="txtContrasena">Contraseña: </label><br>
+          <input type="password" id="txtContrasena" required #txtContrasena="ngModel" name="contrasena"
+            [(ngModel)]="contrasena">
+        </div>
+        <div [hidden]="txtContrasena.valid || !txtContrasena.touched" class="errorCampo">
+          Este campo es obligatorio
+        </div>
+      </div>
+      <div [hidden]=!loginIncorrecto class="alert alert-danger">
+        Usuario o contraseña incorrectos
+      </div>
+      <button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid">
+        Iniciar sesión
+      </button>
+    </form>
+
+  </div>
+</div>
+

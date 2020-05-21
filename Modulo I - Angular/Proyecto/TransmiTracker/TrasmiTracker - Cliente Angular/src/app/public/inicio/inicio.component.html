@@ -1,0 +1,33 @@
+<h1>Lista de rutas</h1>
+
+<div class="form-group">
+  <label for="buscarRoute">
+    Buscar Ruta por Codigo
+  </label>
+  <select id="route" name="route" [(ngModel)]=selectedRoute.id (change)="onSelect($event.target.value)" class="form-control">
+    <option *ngFor="let route of routes" [value]="route.id">
+      {{route.codigo}}
+    </option>
+  </select>
+</div>
+<br>
+<div>
+  <button type="button" class="btn btn-success" *ngIf="this.aux.length == 1"(click)="limpiar()">Limpiar Resultados de Busqueda ruta</button>
+</div>
+<br>
+    <table class="table table-light table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Codigo</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let route of routes">
+          <td>{{route.id}}</td>
+          <td>{{route.codigo}}</td>
+          <td><button type="button" class="btn btn-info" (click)="verRuta(route.id)">Ver ruta</button></td>
+        </tr>
+      </tbody>
+    </table>

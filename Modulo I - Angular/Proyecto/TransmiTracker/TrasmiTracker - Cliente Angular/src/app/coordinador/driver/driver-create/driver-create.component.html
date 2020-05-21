@@ -1,0 +1,125 @@
+<h1>Crear conductor</h1>
+<div class="container">
+    <form (ngSubmit)="crearConductor()" #createForm="ngForm" #updateForm="ngForm">
+      <div>
+            <label for="nombre">Nombre</label>
+            <input class="form-control" type="text" id="cNombre" name="cNombre"
+            required [(ngModel)]="conductor.nombre"
+            #txtNombre="ngModel"/>
+            <div [hidden]="txtNombre.valid || !txtNombre.touched" class="alert alert-danger">
+                El nombre es obligatorio
+            </div>
+        </div>
+        <div>
+            <label for="cedula">Cedula</label>
+            <input class="form-control" type="text" name="cedula" id="cedula"
+            required [(ngModel)]="conductor.cedula"
+            #txtcedula="ngModel"/>
+            <div [hidden]="txtcedula.valid || !txtcedula.touched" class="alert alert-danger">
+                La cedula es obligatoria
+            </div>
+        </div>
+        <div>
+            <label for="telefono">Telefono</label>
+            <input class="form-control" type="number" name="telefono" id="telefono"
+            required [(ngModel)]="conductor.telefono"
+            #txttelefono="ngModel"/>
+            <div [hidden]="txttelefono.valid || !txttelefono.touched" class="alert alert-danger">
+                El telefono es obligatorio
+            </div>
+        </div>
+
+        <div>
+          <label for="direccion">Direccion</label>
+          <input class="form-control" type="text" name="direccion" id="direccion"
+          required [(ngModel)]="conductor.direccion"
+          #textdireccion="ngModel"/>
+          <div [hidden]="textdireccion.valid || !textdireccion.touched" class="alert alert-danger">
+              La textdireccion es obligatoria
+          </div>
+      </div>
+
+      <div>
+        <h2>Agregue los buses al condcutor </h2>
+        <div class="alert alert-info">
+          {{message}}
+        </div>
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr class="thead-dark">
+                    <th>Id</th>
+                    <th>Placa</th>
+                    <th>Modelo</th>
+                    <th>Dias Asignados</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bus of buses; let i=index">
+                    <td>{{ bus.id }}</td>
+                    <td>{{ bus.placa }}</td>
+                    <td>{{ bus.modelo }}</td>
+                    <td>
+                        <tr *ngFor="let ruta of bus.rutas">
+                          <td>
+                            <table>
+                              <tbody>
+                                <tr *ngFor="let dia of ruta.dias">
+                                  <td>{{dia.dia}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                    </td>
+                    <td><button type="button" class="btn btn-success" (click)="agregarBus(bus, i)">Agregar bus</button> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+      <h2>Buses del conductor </h2>
+      <table class="table table-light table-bordered table-hover">
+          <thead>
+            <tr class="thead-dark">
+              <th>Id</th>
+              <th>Placa</th>
+              <th>Modelo</th>
+              <th>Dias Asignados</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let bus of conductor.buses; let i=index">
+              <td>{{ bus.id }}</td>
+              <td>{{ bus.placa }}</td>
+              <td>{{ bus.modelo }}</td>
+              <td>
+                  <tr *ngFor="let ruta of bus.rutas">
+                    <td>
+                      <table>
+                        <tbody>
+                          <tr *ngFor="let dia of ruta.dias">
+                            <td>{{dia.dia}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+              </td>
+                  <td><button type="button" class="btn btn-danger" (click)="quitarBus(bus, i)">Quitar bus</button></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+  <div [hidden]="conductor.buses.length>0"class="alert alert-danger">
+    No hay buese agregadas al conductor
+  </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!updateForm.form.valid || updateForm.submitted">
+            Guardar
+        </button>
+        <button type="button" class="btn btn-default" (click)="cancelar()">Cancelar</button>
+    </form>
+</div>
