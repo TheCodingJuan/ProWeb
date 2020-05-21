@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" style="background-color:black; color:white">
+    <h1>Proyecto .NET "Country Tracker"</h1>
+    <p>Presentado por: Juan Camacho</p>
+    <p class="lead">Proyecto para la materia de programación web.</p>
+    <p>En este se permite la creación de usuarios de rol "Administrador" y "Usuario" </p>
+</div>
+<div class="jumbotron"  style="background-color:black; color:white">
+    <h2>Administrador</h2>
+    <p class="lead">Administrar usuarios. Tiene permitido listar, crear, actualizar y eliminar usuarios.</p>
+    <button class="btn"><h4>@Html.ActionLink("Hacer Funciones de Administrador", "../Usuarios/Index", "")</h4></button>
+</div>
+<div class="jumbotron"  style="background-color:black; color:white">
+    <h2>Usuario</h2>
+    <p class="lead">Administrar la siguiente base de datos.</p>
+    <p>
+        Tiene permitido listar paises, departamentos y ciudades. Al seleccionar un país se listan sus departamentos, al seleccionar un departamento, sus ciudades. En cada listado se permite agregar, editar y eliminar un ítem.
+    </p>
+    <button class="btn"><h4>@Html.ActionLink("Hacer Funciones de Usuario", "../Paises/Index", "")</h4></button>
+</div>
