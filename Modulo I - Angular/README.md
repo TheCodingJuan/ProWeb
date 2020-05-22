@@ -1,19 +1,25 @@
-# Instalación
+## Description
 
-1. Instalar [Node.js](https://github.com/nodesource/distributions/blob/master/README.md) **version 10.x**
+This repository belong to the fist part of Web Programming class taken at the Xaverian Pontifical University. 
 
-- Instrucciones para [Ubuntu](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
-- Repito: **la versión a instalar debe ser la 10.x**. No instalar versiones más nuevas, ya que pueden generar errores.
+I have 
 
-2. Instalar Angular CLI
+## Instalation
+
+1. Install [Node.js](https://github.com/nodesource/distributions/blob/master/README.md) **version 10.x**
+
+- Instructions for [Ubuntu](https://github.com/nodesource/distributions/blob/master/README.md#debinstall)
+- Warning: **The versión to be installed must be 10.x**. Don't install newer versions, it may cause exceptions.
+
+2. Install Angular CLI
 
 `sudo npm install -g @angular/cli`
 
-3. Actualizar NPM
+3. Update NPM
 
 `sudo npm install -g npm`
 
-4. Instalar otros
+4. Install others
 
 `sudo npm install -g typescript`
 
@@ -23,25 +29,25 @@
 
 5. Visual Studio Code
 
-   a. Instalar Visual Studio Code
+   a. Install Visual Studio Code
 
-   b. Si Visual Studio Code ya estuviera instalado, remover configuración antigua de Visual Studio Code (Recomendado)
+   b. If Visual Studio Code it's already installed, remove old configuration from Visual Studio Code (Recomended)
 
-   - Remover las siguientes carpetas:
+   - Remove the following folders:
 
      - `$HOME/.vscode`
      - `$HOME/.config/Code`
 
-6. Instalar extensiones recomendadas de Visual Studio Code
+6. Install extensions recomended by Visual Studio Code
 
-   - Desde la carpeta de este repositorio, ejecutar `./install_extensions.sh`
+   - From the folder of this repo, execute `./install_extensions.sh`
 
-7. Configurar workspace
+7. Configure workspace
 
-   - Abrir Visual Studio Code
+   - Open Visual Studio Code
    - `shift+ctrl+p`
-   - Abrir la opción `Preferences: Open User Settings`
-   - Habilitar las siguientes opciones:
+   - Open the option `Preferences: Open User Settings`
+   - Enable the following options:
 
      - `Tslint: Enable`
      - `HTML > Format: Enable`
