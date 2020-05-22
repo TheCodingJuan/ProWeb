@@ -2,7 +2,7 @@
 
 This repository belong to the fist part of Web Programming class taken at the Xaverian Pontifical University. 
 
-I have 
+I took this class on 2020-01. Following the [Tutorial](https://github.com/jpavlich/pw) from my awesome teacher Jaime Andres Pavlich.
 
 ## Instalation
 
