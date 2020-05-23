@@ -52,4 +52,4 @@ I took this class on 2020-01. Following the [Tutorial](https://github.com/jpavli
      - `Tslint: Enable`
      - `HTML > Format: Enable`
      - `Prettier: Tslint Integration`
-     - `Editor: Format On Save` (recomendado)
+     - `Editor: Format On Save` (recomended)
